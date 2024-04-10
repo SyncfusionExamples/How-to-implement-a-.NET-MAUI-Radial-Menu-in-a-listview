@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RadialMenu.MainPage"
+             xmlns:radialMenu ="clr-namespace:Syncfusion.Maui.RadialMenu;assembly=Syncfusion.Maui.RadialMenu"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView">
+
+    <StackLayout>
+    <syncfusion:SfListView x:Name="listView"  
+                ItemsSource="{Binding BookInfo}"  ItemTapped="listView_ItemTapped_1" 
+                ItemSize="250">
+
+        <syncfusion:SfListView.ItemTemplate>
+            <DataTemplate>
+                <Grid x:Name="main">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.4*" />
+                        <RowDefinition Height="0.6*" />
+                    </Grid.RowDefinitions>
+                    <Label Text="{Binding BookName}" FontAttributes="Bold" TextColor="Teal" FontSize="Small" />
+                    <Label Grid.Row="1" Text="{Binding BookDescription}" TextColor="Teal" FontSize="15"/>
+                </Grid>
+            </DataTemplate>
+        </syncfusion:SfListView.ItemTemplate>
+    </syncfusion:SfListView>
+
+
+    <radialMenu:SfRadialMenu IsOpen="False" 
+                             IsVisible="False"
+                             Closing="radial_Menu_Closing_1"  
+                             HeightRequest="250" 
+                             WidthRequest="220"
+                             x:Name="radial_Menu" 
+                             CenterButtonText="&#xe710;"
+                             CenterButtonFontFamily="MauiMaterialAssets" >
+        <radialMenu:SfRadialMenu.Items>
+                <radialMenu:SfRadialMenuItem Text="&#xe72e;" FontFamily="MauiMaterialAssets">
+                <radialMenu:SfRadialMenuItem.Items>
+                        <radialMenu:SfRadialMenuItem  Text="&#xe744;" 
+                        FontFamily="MauiMaterialAssets" />
+                        <radialMenu:SfRadialMenuItem  Text="&#xe745;" 
+                        FontFamily="MauiMaterialAssets" />
+                        <radialMenu:SfRadialMenuItem  Text="&#xe73b;" 
+                        FontFamily="MauiMaterialAssets" />
+                        <radialMenu:SfRadialMenuItem  Text="&#xe762;" 
+                        FontFamily="MauiMaterialAssets" />
+                </radialMenu:SfRadialMenuItem.Items>
+            </radialMenu:SfRadialMenuItem>
+                <radialMenu:SfRadialMenuItem Text="&#xe72e;" 
+                FontFamily="MauiMaterialAssets">
+                <radialMenu:SfRadialMenuItem.Items>
+                        <radialMenu:SfRadialMenuItem  Text="&#xe744;" 
+                        FontFamily="MauiMaterialAssets" />
+                        <radialMenu:SfRadialMenuItem  Text="&#xe745;" 
+                        FontFamily="MauiMaterialAssets" />
+                        <radialMenu:SfRadialMenuItem  Text="&#xe746;" 
+                        FontFamily="MauiMaterialAssets" />
+                        <radialMenu:SfRadialMenuItem  Text="&#xe762;" 
+                        FontFamily="MauiMaterialAssets" />
+                </radialMenu:SfRadialMenuItem.Items>
+            </radialMenu:SfRadialMenuItem>
+                <radialMenu:SfRadialMenuItem  Text="&#xe72e;" 
+                FontFamily="MauiMaterialAssets">
+                <radialMenu:SfRadialMenuItem.Items>
+                        <radialMenu:SfRadialMenuItem  Text="&#xe744;" 
+                        FontFamily="MauiMaterialAssets" />
+                        <radialMenu:SfRadialMenuItem  Text="&#xe745;" 
+                        FontFamily="MauiMaterialAssets" />
+                        <radialMenu:SfRadialMenuItem  Text="&#xe746;" 
+                        FontFamily="MauiMaterialAssets" />
+                </radialMenu:SfRadialMenuItem.Items>
+            </radialMenu:SfRadialMenuItem>
+                <radialMenu:SfRadialMenuItem  Text="&#xe710;" FontFamily="MauiMaterialAssets">
+                <radialMenu:SfRadialMenuItem.Items>
+                        <radialMenu:SfRadialMenuItem  FontSize="16" Text="&#xe744;" FontFamily="MauiMaterialAssets" />
+                        <radialMenu:SfRadialMenuItem  FontSize="18" Text="&#xe745;" FontFamily="MauiMaterialAssets" />
+                        <radialMenu:SfRadialMenuItem  FontSize="20" Text="&#xe746;" FontFamily="MauiMaterialAssets" />
+                </radialMenu:SfRadialMenuItem.Items>
+            </radialMenu:SfRadialMenuItem>
+                <radialMenu:SfRadialMenuItem Text="&#xe710;" FontFamily="MauiMaterialAssets">
+                <radialMenu:SfRadialMenuItem.Items>
+                        <radialMenu:SfRadialMenuItem  Text="&#xe744;" FontFamily="MauiMaterialAssets" />
+                        <radialMenu:SfRadialMenuItem  Text="&#xe745;" FontFamily="MauiMaterialAssets" />
+                        <radialMenu:SfRadialMenuItem  Text="&#xe746;" FontFamily="MauiMaterialAssets" />
+                </radialMenu:SfRadialMenuItem.Items>
+            </radialMenu:SfRadialMenuItem>
+        </radialMenu:SfRadialMenu.Items>
+    </radialMenu:SfRadialMenu>
+     </StackLayout>
+
+</ContentPage>
